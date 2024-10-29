@@ -37,26 +37,37 @@
             const firstName = sessionStorage.getItem('fname');
             const lastName = sessionStorage.getItem('lname');
             const email = sessionStorage.getItem('email');
-            if (firstName) {
+            // if (firstName) {
+            //     document.getElementById('fname').value = firstName;
+            //     alert('Stored data for First Name has been loaded.');
+            // } else {
+            //     alert('There was no data found in session storage for First Name.');
+            // }
+
+            // if (lastName) {
+            //     document.getElementById('lname').value = lastName;
+            //     alert('Stored data for Last Name has been loaded.');
+            // } else {
+            //     alert('There was no data found in session storage for Last Name.');
+            // }
+
+            // if (email) {
+            //     document.getElementById('email').value = email;
+            //     alert('Stored data for Email has been loaded.');
+            // } else {
+            //     alert('There was no data found in session storage for Email.');
+            // }
+
+            
+            if (firstName && lastName && email) {
                 document.getElementById('fname').value = firstName;
-                alert('Stored data for First Name has been loaded.');
-            } else {
-                alert('There was no data found in session storage for First Name.');
-            }
-
-            if (lastName) {
                 document.getElementById('lname').value = lastName;
-                alert('Stored data for Last Name has been loaded.');
-            } else {
-                alert('There was no data found in session storage for Last Name.');
-            }
-
-            if (email) {
                 document.getElementById('email').value = email;
-                alert('Stored data for Email has been loaded.');
+                alert('Stored data for First Name, Last Name, and Email has been loaded');
             } else {
-                alert('There was no data found in session storage for Email.');
+                alert('There was a problem retrieving your form data. Please fill out the form again and we apologize for the inconvenience');
             }
+            
         }
 
         function clearData() {
