@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using JavaScript Session Storage</title>
+</head>
+<body>
+    <form action="" id="userForm">
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname">
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+
+        <button type="button" onclick="saveData()">Save</button>
+        <button type="button" onclick="loadData()">Load</button>
+        <button type="button" onclick="clearData()">Clear</button>
+    </form>
+
+    <script>
+        function saveData() {
+            const fname = document.getElementById('fname').value;
+            const lname = document.getElementById('lname').value;
+            const email = document.getElementById('email').value;
+            sessionStorage.setItem('fname', fname);
+            sessionStorage.setItem('lname', lname);
+            sessionStorage.setItem('email', email);
+            alert('Data saved to session storage.');
+        }
+
+        function loadData() {
+            const firstName = sessionStorage.getItem('fname');
+            const lastName = sessionStorage.getItem('lname');
+            const email = sessionStorage.getItem('email');
+            if (firstName) {
+                document.getElementById('fname').value = firstName;
+                alert('Stored data for First Name has been loaded.');
+            } else {
+                alert('There was no data found in session storage for First Name.');
+            }
+
+            if (lastName) {
+                document.getElementById('lname').value = lastName;
+                alert('Stored data for Last Name has been loaded.');
+            } else {
+                alert('There was no data found in session storage for Last Name.');
+            }
+
+            if (email) {
+                document.getElementById('email').value = email;
+                alert('Stored data for Email has been loaded.');
+            } else {
+                alert('There was no data found in session storage for Email.');
+            }
+        }
+
+        function clearData() {
+            sessionStorage.removeItem('fname');
+            sessionStorage.removeItem('lname');
+            sessionStorage.removeItem('email');
+            alert('All session storage cleared.');
+        }
+    </script>
+</body>
+</html>
