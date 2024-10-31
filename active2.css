@@ -1,0 +1,51 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+
+button {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0.5rem 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    /* Show nav by default on larger screens */
+    nav {
+        display: block;
+    }
+
+    #navToggle {
+        display: none;
+    }
+}

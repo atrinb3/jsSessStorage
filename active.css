@@ -1,0 +1,43 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #333;
+    padding: 1rem;
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.nav-link.active {
+    background-color: #555;
+    color: #fff;
+}
+
+.section {
+    height: 100vh;
+    padding-top: 5rem;
+    text-align: center;
+    font-size: 2rem;
+}
