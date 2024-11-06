@@ -7,16 +7,29 @@
 </head>
 <body>
     <h1>Using Javascript Session Storage</h1>
+    <p>Modified by Andrew Tringali</p>
     <form action="" id="userForm">
         <label for="fname">First Name:</label>
         <input type="text" id="fname" name="fname">
-
+        <br>
         <label for="lname">Last Name:</label>
         <input type="text" id="lname" name="lname">
-
+        <br>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email">
-
+        <br>
+        <label for="street">Street:</label>
+        <input type="text" id="street" name="street">
+        <br>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+        <br>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state">
+        <br>
+        <label for="zip">Zip:</label>
+        <input type="number" id="zip" name="zip" maxlength="5">
+        <br>
         <button type="button" onclick="saveData()">Save</button>
         <button type="button" onclick="loadData()">Load</button>
         <button type="button" onclick="clearData()">Clear</button>
@@ -27,10 +40,18 @@
             const fname = document.getElementById('fname').value;
             const lname = document.getElementById('lname').value;
             const email = document.getElementById('email').value;
+            const street = document.getElementById('street').value;
+            const city = document.getElementById('city').value;
+            const state = document.getElementById('state').value;
+            const zip = document.getElementById('zip').value;
 
             sessionStorage.setItem('fname', fname);
             sessionStorage.setItem('lname', lname);
             sessionStorage.setItem('email', email);
+            sessionStorage.setItem('street', street);
+            sessionStorage.setItem('city', city);
+            sessionStorage.setItem('state', state);
+            sessionStorage.setItem('zip', zip);
             alert('Data saved to session storage.')
         }
 
@@ -38,6 +59,10 @@
             const firstName = sessionStorage.getItem('fname');
             const lastName = sessionStorage.getItem('lname');
             const email = sessionStorage.getItem('email');
+            const street = sessionStorage.getItem('street');
+            const city = sessionStorage.getItem('city');
+            const state = sessionStorage.getItem('state');
+            const zip = sessionStorage.getItem('zip');
 
             // if (firstName) {
             //     document.getElementById('fname').value = firstName;
@@ -50,7 +75,11 @@
                 document.getElementById('fname').value = firstName;
                 document.getElementById('lname').value = lastName;
                 document.getElementById('email').value = email;
-                alert('Stored data for First Name, Last Name, and Email has been loaded');
+                document.getElementById('street').value = street;
+                document.getElementById('city').value = city;
+                document.getElementById('state').value = state;
+                document.getElementById('zip').value = zip;
+                alert('Stored data for First Name, Last Name, Email, Street, City, State, Zip has been loaded');
             } else {
                 alert('There was a problem retrieving your form data. Please fill out the form again and we apologize for the inconvenience');
             }
@@ -60,6 +89,10 @@
             sessionStorage.removeItem('fname');
             sessionStorage.removeItem('lname');
             sessionStorage.removeItem('email');
+            sessionStorage.removeItem('street');
+            sessionStorage.removeItem('city');
+            sessionStorage.removeItem('state');
+            sessionStorage.removeItem('zip');
             alert('All session storage cleard.')
         }
     </script>
